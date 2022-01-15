@@ -1,6 +1,7 @@
-FROM registry.gitlab.com/tychodev1/gitlab-coe/images/cicd/ubi-nodejs:latest
+ARG org_name=replace
+FROM registry.gitlab.com/${org_name}/gitlab-coe/images/cicd/ubi-nodejs:latest
 
-LABEL maintainer="TychoDev <cloud.ops@tychodev.com>"
+LABEL maintainer=""
 
 RUN npm install -g cdktf-cli
 RUN cdktf --version
