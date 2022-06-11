@@ -27,7 +27,7 @@ RUN microdnf update -y \
 RUN pip3 install --upgrade pip && pip3 install poetry
 RUN python3 --version && pip3 --version
 
-# Install Node, NPM, and AWS CDK
+# Install Node, NPM, and Terraform CDK
 RUN microdnf update -y \
     && microdnf module enable nodejs:14 \
     && microdnf install -y nodejs \
