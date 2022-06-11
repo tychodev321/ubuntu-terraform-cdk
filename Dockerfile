@@ -3,6 +3,8 @@ FROM registry.access.redhat.com/ubi9/ubi-minimal:9.0.0
 
 LABEL maintainer=""
 
+ENV TERRAFORM_CDK_VERSION=0.11.2
+
 ENV PYTHON_VERSION=3 \
     PATH=$HOME/.local/bin/:$PATH \
     PYTHONUNBUFFERED=1 \
@@ -44,7 +46,7 @@ RUN npm install --global yarn@${YARN_VERSION} \
 RUN node --version \ 
     && npm --version \ 
     && yarn --version \
-    && npm install -g cdktf-cli \ 
+    && npm install -g cdktf-cli@${TERRAFORM_CDK_VERSION} \ 
     && cdktf --version
 
 # USER 1001
