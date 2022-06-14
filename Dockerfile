@@ -48,7 +48,6 @@ RUN microdnf update -y \
 
 # Make sure to upgrade pip3
 RUN pip3 install --upgrade pip && pip3 install poetry && pip3 install pipenv
-
 RUN python3 --version && pip3 --version && pipenv --version
 
 # Install Node, NPM, and Terraform CDK
