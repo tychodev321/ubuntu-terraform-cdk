@@ -47,11 +47,7 @@ RUN microdnf update -y \
     && rm -rf /var/cache/* /var/log/dnf* /var/log/yum.*
 
 # Make sure to upgrade pip3
-RUN pip3 install --upgrade pip && pip3 install poetry && pip3 install --user pipenv
-
-# Update Path to Pipenv and other Python applications are executable from shell
-ENV PYTHON_BIN_PATH="$(python3 -m site --user-base)/bin"
-ENV PATH="$PATH:$PYTHON_BIN_PATH"
+RUN pip3 install --upgrade pip && pip3 install poetry && pip3 install pipenv
 
 RUN python3 --version && pip3 --version && pipenv --version
 
