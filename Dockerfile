@@ -53,7 +53,7 @@ RUN pip3 install --upgrade pip && pip3 install poetry && pip3 install --user pip
 ENV PYTHON_BIN_PATH="$(python3 -m site --user-base)/bin"
 ENV PATH="$PATH:$PYTHON_BIN_PATH"
 
-RUN python3 --version && pip3 --version
+RUN python3 --version && pip3 --version && pipenv --version
 
 # Install Node, NPM, and Terraform CDK
 RUN microdnf update -y \
