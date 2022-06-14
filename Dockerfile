@@ -47,8 +47,8 @@ RUN microdnf update -y \
     && rm -rf /var/cache/* /var/log/dnf* /var/log/yum.*
 
 # Make sure to upgrade pip3
-RUN pip3 install --upgrade pip && pip3 install poetry && pip3 install pipenv
-RUN python3 --version && pip3 --version && pipenv --version
+RUN pip3 install --upgrade pip && pip3 install poetry
+RUN python3 --version && pip3 --version
 
 # Install Node, NPM, and Terraform CDK
 RUN microdnf update -y \
