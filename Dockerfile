@@ -4,7 +4,7 @@ FROM registry.access.redhat.com/ubi9/ubi-minimal:9.0.0
 LABEL maintainer=""
 
 ENV TERRAFORM_CDK_VERSION=0.14.1
-ENV TERRAFORM_VERSION=1.3.5
+ENV TERRAFORM_VERSION=1.3.4
 ENV TERRAFORM_URL=https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_linux_amd64.zip
 
 ENV PYTHON_VERSION=3 \
@@ -65,7 +65,7 @@ RUN microdnf update -y \
 # Install Yarn and Terraform CDK
 RUN npm install --global yarn@${YARN_VERSION} \
     && npm config set prefix /usr/local \
-    && npm install -g cdktf-cli@${TERRAFORM_CDK_VERSION} \ 
+    && npm install -g cdktf-cli@${TERRAFORM_CDK_VERSION}
     
 RUN echo "terraform version: $(terraform --version | head -n 1)" \
     && echo "cdktf version: $(cdktf --version)" \
