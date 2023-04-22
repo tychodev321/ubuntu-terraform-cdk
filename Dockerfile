@@ -57,6 +57,12 @@ RUN apt update -y && apt upgrade -y \
     && apt clean -y \
     && rm -rf /var/lib/apt/lists/*
 
+# Download and install Terraform
+RUN wget ${TERRAFORM_URL} \ 
+    && unzip terraform_${TERRAFORM_VERSION}_linux_amd64.zip \
+    && rm terraform_${TERRAFORM_VERSION}_linux_amd64.zip \
+    && mv terraform /usr/bin/terraform
+
 # Install Yarn and Terraform CDK
 RUN npm install --global yarn@${YARN_VERSION} \
     && npm config set prefix /usr/local \
