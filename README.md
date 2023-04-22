@@ -1,1 +1,1 @@
-# ubi-terraform-cdk
+# ubuntu-terraform-cdk
