@@ -1,4 +1,5 @@
-FROM ubuntu:22.10
+# https://hub.docker.com/_/ubuntu
+FROM ubuntu:22.04
 
 LABEL maintainer=""
 
@@ -13,8 +14,8 @@ ENV PYTHON_VERSION=3.10.10 \
     PIP_NO_CACHE_DIR=off \
     POETRY_VERSION=1.2.2
 
-ENV NODEJS_VERSION=18.16.0 \
-    NPM_VERSION=9.6.5 \
+ENV NODEJS_VERSION=20.8.0 \
+    NPM_VERSION=10.1.0 \
     YARN_VERSION=1.22.19 \
     PATH=$HOME/.local/bin/:$PATH \
     npm_config_loglevel=warn \
